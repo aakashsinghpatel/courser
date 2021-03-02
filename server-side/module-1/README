@@ -1,0 +1,53 @@
+snode modue:
+auto provide modules 
+
+HTTP: for metworking
+path: for path realted for the file
+    path.resole()- conver relative path into absolute path
+    path.extname(path) - return extension of file
+fs: use for all file realted opn
+    fs.exist(filepath, (exist) => {})
+    fs.cretaereadStream(filepath).pipe(res) -- to read from file
+
+
+Express---
+
+middleware-- third party modele on top of node
+    morgan-- use for loging purpose of incoming request (log information of incoming request)
+    expres.static---use to send static file or dat to response(serving static web resourec)
+    __dirname, -__file name gibe name of current directory and file
+    
+    
+when serving static file, then by default it serve index.html file if '/' path is given
+and on finding specific file it find into static folder that is configured use app.static.
+
+if no file found then it serve the res  what is prasent into the response ..
+
+1> for all static file(.html/ .txt) requested it will sever from staic folder
+2> if not path given then it will default retun inex.html file as response
+
+webservices:
+
+SOAP: simple object access protocal -- xml base, wsdl(web service description language)
+Rest: representational state transfer -- 
+    xml/ json, simple compate to soap, wsdl, web standards.
+    stateless- every request coming to srvr will be new request,
+    client can store state using coockie and client site orege, and with every requets willl send some dat to server
+    , exposed a URL, has http methods,
+    
+Express router:
+    app.all()-- this will apply to all incoming request, any of the changes to req, res here will send update req res to next one 
+    , app.get(), app.put(), app.delete(), app.post().
+Route with params:    
+    app.get('dishes/:dishId', (req, res,nxt) => {    
+    res.end('req.params.dishis)
+    })
+
+body-parser- middleware for parsing data sent in request body,
+  bodyparser.json(): will only parse json data of request body and populate req.body property
+  
+  
+Express-routeer: come with express module, so no need to install it seprately
+    middleware to cretae mini -express applicarion- use to cretae module for specific route--when need to support leargge numer of api's
+    
+    
