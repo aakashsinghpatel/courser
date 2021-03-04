@@ -15,6 +15,9 @@ app.use(express.static(__dirname+ '/public'));
 
 
 const dishRouter =  require('./routes/dishRouter');
+const leaderRouter =  require('./routes/leaderRouter');
+const promotionRouter =  require('./routes/promotionRouter');
+
 /* === code withput express router
 // request with dishes 
 app.all('/dishes', (req,res,next) => {
@@ -68,7 +71,11 @@ app.delete('/dishes/:dishId', (req, res, next) => {
 /* == code with express rouer */
 
 app.use('/dishes', dishRouter);
+app.use('/leaders', leaderRouter);
+app.use('/promotions', promotionRouter);
 
+
+/* this below code default serve static file if any requested any also serve any default path/route */
 app.use((req, res, next) => {
 console.log('request header', req.headers);
         res.statusCode = 200;

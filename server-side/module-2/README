@@ -1,0 +1,8 @@
+1> Express-generator: scaffholding tool to crate middleware appliction with and schleton for genrearting expess application as middleware
+  creates:
+    app.js: start of app
+    package.json:
+    routes: for all routes file (app related route)
+    public: to keep all staic file, which need to server to server(index.html/ absolute.html)
+    views: temp;ate engine templates
+    bin-> www
